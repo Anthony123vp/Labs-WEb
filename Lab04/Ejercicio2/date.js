@@ -7,7 +7,9 @@ function Submit(){
     let edadF=edad.value;
     if(edadF<18){
         alert("Solo se admiten usuarios mayores de edad");
+        return false;
     }
+    return true;
 }
 
 function Limpiar(){
