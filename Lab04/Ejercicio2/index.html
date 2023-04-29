@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <div class="container ">
+      <div class="card ">
+        <div class="card-header text-center bg-secondary bg-gradient ">
+            DATOS USUARIO
+        </div>
+        <div class="card-body">
+          <form action="pregunta2.php" method="POST">
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Nombre y Apellido</label>
+                <input type="text" name="txtName" id="txtName" class="form-control" id="formGroupExampleInput" placeholder="Nombre del usuario" required>
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Direccion</label>
+                <input type="text" name="txtDirection" id="txtDirection" class="form-control" id="formGroupExampleInput2" placeholder="Dirección del usuario" required>
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">E-mail</label>
+                <input type="email" name="txtEmail" id="txtEmail" class="form-control" id="formGroupExampleInput2" placeholder="Correo electrónico" required>
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Edad</label>
+                <input type="text" name="txtEdad" id="txtEdad" class="form-control" id="formGroupExampleInput2" placeholder="18" required>
+              </div>
+              <div class="mb-3">
+                <button class="btn btn-primary" type="submit" onclick="Submit()">Enviar</button>
+                <button class="btn btn-primary two" type="submit" onclick="Limpiar()">Limpiar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+        
+    </div>
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+
+</html>

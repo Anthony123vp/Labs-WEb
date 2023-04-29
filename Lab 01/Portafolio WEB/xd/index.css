@@ -1,0 +1,196 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #53595c;
+}
+.container{
+    background-color:  #b6b19f;
+    width: 1200px;
+    height: 1400px;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    display: flex;
+    position: relative;
+}
+.personal-info{
+    background-color:  #6a5f61;
+    width: 410px;
+    height: 1350px;
+    position: absolute;
+    top: 20px;
+    left: 40px;
+}
+
+.Logo img{
+    width: 410px;
+    height: 400px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    object-fit: cover;
+
+}
+.Logo h2{
+    position: absolute;
+    left: 0px;
+    top: 260px;
+    background-color: rgb(183, 185, 187);
+    opacity: .5;
+    box-shadow: 0px 5px 10px rgb(135, 134, 134);    /* Sombra con ligero desenfoque */
+    width: 100%;
+    padding: 6px;
+    
+
+}
+.Logo{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+
+}
+.carrera{
+    margin-top: 420px;
+    text-align: center;
+    font-style: italic;
+    background-color: #e8cb96;
+    box-shadow: 0px 5px 10px rgb(67, 66, 66);    /* Sombra con ligero desenfoque */
+
+}
+.carrera h3{
+    padding: 10px;
+}
+.personal-info .informacion-personal {
+    margin-top: 30px;
+    color: white;
+    padding:25px;
+}
+.personal-info .informacion-personal .detalle{
+    padding-top: 10px;
+    font-size: 19px;
+    line-height : 32px;
+    text-align: justify;
+}
+.info{
+    position: relative;
+}
+.botones{
+    margin-top: 10px;
+    margin-left: 250px;
+}
+.botones #one{
+    width: 150px;
+    height: 30px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.botones #two{
+    width: 80px;
+    height: 30px;
+    margin-right: 20px;
+    cursor: pointer;
+
+}
+.botones #three{
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+
+}
+
+.personal-info .informacion-personal .listacontacto{
+    margin-top: 45px;
+    margin-left: 7px;
+}
+.personal-info .informacion-personal .listacontacto ul{
+    position: relative;
+    list-style: none;
+}
+.personal-info .informacion-personal .listacontacto ul li i{
+    font-size: 40px;
+}
+.personal-info .informacion-personal .listacontacto ul li span{
+    position: absolute;
+    left: 80px;
+    margin-top: 15px;
+}
+.personal-info .informacion-personal .listacontacto ul li {
+    padding-bottom: 40px;
+}
+.container1{
+    background-color:  #f3f4e5 ;
+
+    position: absolute;
+    left: 500px;
+    top: 20px;
+    width: 650px;
+    height: 230px;
+}
+
+.informacion {
+    display: block;
+    width: 100%;
+}
+#info{
+    display: flex;
+    padding-bottom: 20px;
+    margin-top: 20px;
+}
+.informacion #titulo{
+    text-align: center;
+    width: 200px;
+    font-size: 20px;
+}
+.informacion #ti-info{
+    width: 350px;
+    font-size: 20px;
+
+}
+.container2{
+    background-color: #f3f4e5 ;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 15px;
+    position: absolute;
+    left: 500px;
+    top: 320px;
+    width: 650px;
+    height: 680px;
+}
+.info2{
+    margin-top:70px;
+    margin-left: 15px;
+    font-size: medium;
+}
+.info2 p{
+    font-size: 16.6px;
+}
+.container3{
+    background-color: #f3f4e5 ;
+    position: absolute;
+    bottom: 0px;
+    left: 500px;
+    top: 1080px;
+    width: 650px;
+    height: 290px;
+
+}
+.info3{
+    margin-top:35px;
+    margin-left: 40px;
+    font-size: large;
+}
+.info3 div{
+    display: flex;
+    align-items: center;
+}
+.info3 div p{
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+
+

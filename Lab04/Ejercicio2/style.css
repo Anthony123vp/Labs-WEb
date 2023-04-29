@@ -1,0 +1,21 @@
+.two{
+    background-color:rgb(71, 71, 71);
+    border:none;
+}
+
+.two:hover{
+    background-color: rgb(189, 190, 191);
+    transition: all 0.5s;
+}
+
+
+.container{
+    width: 600px;
+    margin: auto;
+    margin-top: 5em;
+}
+
+.card{
+    width: 500px;
+    margin: auto;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="../EjercicioA/index.css">
+</head>
+<body>
+    <header>
+        <h2>TECSUP</h2>
+        <ul>
+            <li><a id="titulo">Ejercicios:</a></li>
+            <li><a href="../EjercicioA/index.html">A</a></li>
+            <li><a href="../EjericioB/index.html">B</a></li>
+            <li><a href="../EjercicioC/index.html">C</a></li>
+            <li><a href="../EjercicioD/index.html">D</a></li>
+            <li><a href="../EjercicioE/index.html">E</a></li>
+
+        </ul>
+    </header>
+    <form action="" method="dialog">
+        <label for="">Nota1: </label>
+        <input type="number" id="nota1" required>
+
+        <label for="">Nota2: </label>
+        <input type="number" id="nota2" required>
+
+        <label for="">Nota3: </label>
+        <input type="number" id="nota3" required>
+
+        <h3>¿ESTAS APROBADO O DESAPROBADO?</h3>
+        <input type="submit" onclick="promedio()">
+        <h1 id="resultado" style="text-align: center;"></h1>
+
+    </form>
+</body>
+</html>

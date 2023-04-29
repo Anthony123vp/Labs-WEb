@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">PruebaWeb</string>
+    <string name="common_google_play_services_network_error_text">Error</string>
+</resources>
