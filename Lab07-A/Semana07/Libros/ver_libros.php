@@ -18,7 +18,7 @@ while($crow = mysqli_fetch_assoc($result)){
 	                         '<td>'.$crow['año'].'</td>'.
 							 '<td>'.$crow['autor'].'</td>'.
                              '<td>'.$crow['titulo'].'</td>'.
-                             '<td>'.'<a href="'.$crow['url'].'" target="_blank">Link</a></td>'.
+                             '<td>'.'<a href="'.$crow['url'].'" target="_blank">Leer Libro</a></td>'.
 							 '<td>'.$crow['especialidad'].'</td>'.
 							 '<td>'.$crow['editorial'].'</td>'.
 							 '<td>'.
