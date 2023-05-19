@@ -68,7 +68,7 @@
         $cantidad = mysqli_fetch_assoc($query);
 
 
-        if($cantidad['total']==0){
+        if($cantidad['total']==1){
             header("Location: producto.html");
         }else{
             ?> 
