@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALUMNO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+
+</head>
+<style>
+    .card {
+        width: 600px;
+        margin: auto;
+        margin-bottom: 5%;
+    }
+</style>
+
+<body>
+    <!--Crear Producto-->
+    <div class="card" style="display: none;" id="form">
+        <div class="card-header bg-dark text-white text-center" id="titleform">
+            CREAR PRODUCTO
+        </div>
+        <div class="card-body">
+            <form action="CrearCurso.php" method="post">
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Descripcion</label>
+                    <input type="text" class="form-control" id="descripcion" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Stock</label>
+                    <input type="number" class="form-control" id="stock" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Precio Venta</label>
+                    <input type="number" class="form-control" id="precio_venta" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                  </div>
+                </div>
+                
+                <a href="javascript:guardar_form()" class="btn btn-primary" id="btnGuardar">GUARDAR</a>
+                <a href="" class="btn btn-primary">CANCELAR</a>
+
+                <br>
+            </form>
+        </div>
+    </div>
+    </div><!--End Div Card-->
+
+
+    <div>
+        <a href="usuario.html" class="btn btn-primary">MANTENIMIENTO DE USUARIOS</a>
+    </div>
+    <!--Start Our Table-->
+    <div class="container bg-light" style="position: relative;" id="listProductos"> 
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Buscar por Nombre</label>
+            <input type="text" class="form-control" id="nombrefiltro" aria-describedby="emailHelp">
+            <a href="javascript:buscar()" class="btn btn-primary">BUSCAR</a>
+        </div>
+        <a href="javascript:ver_form()" class="btn btn-primary" style="position:absolute; right: 50px;">Añadir</a>
+
+        <h1 class="text-center">Listas Productos</h1>
+        <br>
+        
+        <table class="table">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Stock</th>
+                    <th scope="col">Precio_Venta</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="datos">
+                
+            </tbody>
+        </table>
+    </div>
+
+
+</body>
+    <script>
+        var valor;
+
+        $(document).ready(function() {
+
+            carga_datos();
+        });
+
+        function carga_datos() {
+
+            $.ajax({
+                type: "POST",
+                url: "./Productos/verproductos.php",
+                async: false,
+                success: function(result) {
+                    valor = result;
+
+                }
+            });
+            document.getElementById("datos").innerHTML = valor;
+        }
+
+        function buscar() {
+
+            $.ajax({
+                type: "POST",
+                url: "./Productos/buscar.php",
+                async: false,
+                data: {
+                    nombre: $(nombrefiltro).val()
+                },
+                success: function(result) {
+                    valor = result;
+
+                }
+            });
+            document.getElementById("datos").innerHTML = valor;
+        }
+
+        function ver_form() {
+            document.getElementById("form").style.display = "block";
+            document.getElementById("listProductos").style.display = "none";
+            document.getElementById("btnNuevo").style.display = "none";
+        }
+
+
+        function eliminar_form(id) {
+
+            $.ajax({
+                type: "POST",
+                url: "./Productos/eliminarproductos.php",
+                async: false,
+                data: {
+                    idProducto:id
+                },
+                success: function (result) {
+                    valor = result;
+
+                }
+            });
+
+            carga_datos();
+
+        }
+
+
+        function editar_form(id) {
+            document.getElementById("titleform").innerHTML="Modificar Producto";
+            document.getElementById("titleform").style.display="flex";
+            document.getElementById("titleform").style.justifyContent="center";
+            document.getElementById("titleform").style.fontSize="30px";
+            document.getElementById("btnGuardar").setAttribute('href','javascript:actualizar_producto('+id+')');
+            document.getElementById("btnGuardar").innerHTML="Actualizar";    
+            ver_form();
+             
+        }
+
+        function actualizar_producto(id){
+            $.ajax({
+                type: "POST",
+                url: "./Productos/editarproducto.php",
+                async: false,
+                data: {
+                    id_producto:id,
+                    nombre: $(nombre).val(),
+                    descripcion: $(descripcion).val(),
+                    stock: $(stock).val(),
+                    precio_venta: $(precio_venta).val()
+                },
+                success: function (result) {
+                    valor = result;
+
+                }
+            });
+
+            cancelar_form();
+            carga_datos();
+        }
+
+        function guardar_form() {
+
+            $.ajax({
+                type: "POST",
+                url: "./Productos/agregarProductos.php",
+                async: false,
+                data: {
+                    nombre: $(nombre).val(),
+                    descripcion: $(descripcion).val(),
+                    stock: $(stock).val(),
+                    precio_venta: $(precio_venta).val()
+                },
+                success: function (result) {
+                    valor = result;
+
+                }
+            });
+
+            cancelar_form();
+            carga_datos();
+        }
+
+        function cancelar_form() {
+            document.getElementById("form").style.display = "none";
+            document.getElementById("listProductos").style.display = "block";
+        }
+
+    </script>
+</html>
